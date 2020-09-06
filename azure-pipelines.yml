@@ -11,5 +11,5 @@ pool:
 
 steps:
 - script: |
-    make
+    /BasicCpp/make
   displayName: 'make'
