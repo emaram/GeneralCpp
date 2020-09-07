@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <cstdio>
 
 using namespace std;
 
@@ -12,10 +13,10 @@ void getSumProdDivisors();
 // ----------------------------------------
 int main(int argc, char* argv[])
 {
-	system("clear");
 	int op;
 
 	while (true) {
+		system("clear");
 		cout << endl << endl;
 		cout << "*****************************************" << endl;
 		cout << "Basic C++ functions" << endl;
@@ -27,6 +28,8 @@ int main(int argc, char* argv[])
 		cout << "*****************************************" << endl;
 		cout << "Your option: ";
 		cin >> op;
+
+		cout << endl << endl << endl;
 
 		switch (op)
 		{
@@ -40,6 +43,7 @@ int main(int argc, char* argv[])
 			getSumProdDivisors();
 			break;
 		case 0:
+			system("clear");
 			return 0;
 		default:
 			break;
@@ -76,7 +80,8 @@ void lastDigitSquare()
 	if (found == false)
 		cout << "There is no number with last digit == " << n;
 
-	cout << endl;
+	cout << endl << endl;
+	system( "read -n 1 -s -p \"Press any key to continue...\"" );
 }
 
 // ----------------------------------------
@@ -114,6 +119,9 @@ void getInverseNumber()
 		}
 
 	}
+	cout << endl << endl;
+	system( "read -n 1 -s -p \"Press any key to continue...\"" );
+
 }
 
 // ----------------------------------------
@@ -143,5 +151,7 @@ void getSumProdDivisors()
 		cout << "Sum of its divisors is: " << sum << endl;
 		cout << "Prod of its divisors is: " << prod << endl;
 	}
-	
+	cout << endl << endl;
+	system( "read -n 1 -s -p \"Press any key to continue...\"" );
+
 }

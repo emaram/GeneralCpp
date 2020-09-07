@@ -1,3 +1,4 @@
 *.o
 BasicApp
 BasicCpp
+.vscode
