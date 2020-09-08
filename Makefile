@@ -1,4 +1,4 @@
-BasicCpp::
+BasicCpp:: 
 	cd BasicCpp && $(MAKE)
 
 clean:

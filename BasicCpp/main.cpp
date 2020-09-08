@@ -7,6 +7,7 @@ using namespace std;
 void lastDigitSquare();
 void getInverseNumber();
 void getSumProdDivisors();
+void getBestUnit();
 
 // ----------------------------------------
 // main(): Everything starts here :-)
@@ -24,6 +25,7 @@ int main(int argc, char* argv[])
 		cout << "1. Get square of last digit" << endl;
 		cout << "2. Get inverse number for digits avg < 5" << endl;
 		cout << "3. Get sum and prod for divisors of a number" << endl;
+		cout << "4. Get most profitable unit" << endl;
 		cout << "0. EXIT" << endl;
 		cout << "*****************************************" << endl;
 		cout << "Your option: ";
@@ -41,6 +43,9 @@ int main(int argc, char* argv[])
 			break;
 		case 3:
 			getSumProdDivisors();
+			break;
+		case 4:
+			getBestUnit();
 			break;
 		case 0:
 			system("clear");
@@ -151,6 +156,67 @@ void getSumProdDivisors()
 		cout << "Sum of its divisors is: " << sum << endl;
 		cout << "Prod of its divisors is: " << prod << endl;
 	}
+	cout << endl << endl;
+	system( "read -n 1 -s -p \"Press any key to continue...\"" );
+
+}
+
+// ----------------------------------------
+// A company has a number n of units. (1 < n < 5)
+// Each unit reported its profit for Q1, Q2, Q3, Q4.
+// This function displays the best profitable unit for quarter q.
+// ----------------------------------------
+void getBestUnit()
+{
+	int n, q;
+	cout << "Input number of units (1..5): ";
+	cin >> n;
+	cout << endl;
+
+	int q1[5], q2[5], q3[5], q4[5];
+	cout << "Input quarterly profits: " << endl;
+	cout << "        Q1 Q2 Q3 Q4" << endl;
+	for (int i = 0; i < n; i++) {
+		cout << "Unit " << i+1 << ": ";
+		cin >> q1[i] >> q2[i] >> q3[i] >> q4[i];
+	}
+
+	cout << endl << "Input quarter (1..4): ";
+	cin >> q;
+	int max = 0;
+	switch (q)
+	{
+	case 1:
+		for (int i = 0; i < n; i++) {
+			if (max < q1[i])
+				max = q1[i];
+		}
+		break;
+	case 2:
+		for (int i = 0; i < n; i++) {
+			if (max < q2[i])
+				max = q2[i];
+		}
+		break;
+	case 3:
+		for (int i = 0; i < n; i++) {
+			if (max < q3[i])
+				max = q3[i];
+		}
+		break;
+	case 4:
+		for (int i = 0; i < n; i++) {
+			if (max < q4[i])
+				max = q4[i];
+		}
+		break;
+	
+	default:
+		break;
+	}
+
+	cout << "The most profitable unit on quarter " << q << " is " << max << endl;
+
 	cout << endl << endl;
 	system( "read -n 1 -s -p \"Press any key to continue...\"" );
 
